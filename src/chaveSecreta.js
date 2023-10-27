@@ -1,1 +1,1 @@
-module.exports = 'chavesecreta';
+module.exports = process.env.CHAVE_SECRETA;
