@@ -19,9 +19,7 @@
   },
   "homepage": "https://github.com/Zecagoess/desafio-backend-modulo-05-sistema-pdv-dbe-b2b-t07-ifood#readme",
   "dependencies": {
-    "-": "^0.0.1",
     "bcrypt": "^5.1.1",
-    "D": "^1.0.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
