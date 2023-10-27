@@ -18,5 +18,4 @@ rotas.get('/usuario', usuario.detalhar);
 rotas.put('/usuario', validarCorpoRequisicao(schemaUsuario), podeUsarEmail, usuario.atualizar);
 
 
-
 module.exports = rotas;
