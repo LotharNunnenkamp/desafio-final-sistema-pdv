@@ -8,12 +8,20 @@ const options = {
             version: '1.0.0',
             description: 'Sprint 1',
         },
-        // tags: [ // Defina as tags aqui
-        //     {
-        //         name: 'Categoria',
-        //         description: 'Operações relacionadas a categorias',
-        //     },
-        // ],
+        tags: [
+            {
+                name: 'Login',
+                description: 'Faça o login para poder utilizar todas as funcionalidades.',
+            },
+            {
+                name: 'Categoria',
+                description: 'Operações relacionadas a categorias',
+            },
+            {
+                name: 'Usuarios',
+                description: 'Operações relacionadas a Usuario',
+            }
+        ],
         components: {
             securitySchemes: {
                 bearerAuth: {
@@ -29,8 +37,7 @@ const options = {
             },
         ],
     },
-    //apis: ['./src/controladores/*.js'], // Caminho para os arquivos que contêm as rotas da API
-    apis: ['./src/documentacao/*.js'], // Caminho para os arquivos que contêm as rotas da API
+    apis: ['./src/documentacao/*.js'],
 };
 
 const swaggerSpec = swaggerJsdoc(options);

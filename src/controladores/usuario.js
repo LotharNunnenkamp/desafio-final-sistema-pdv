@@ -41,7 +41,7 @@ const atualizar = async (req, res) => {
             return res.status(400).json({ mensagem: 'Não foi possivel atualiar o usuario.' })
         }
 
-        return res.status(200).json({ mensagem: 'Usuario atualizado com sucesso.' });
+        return res.status(204).json({ mensagem: 'Usuario atualizado com sucesso.' });
 
     } catch (erro) {
         console.log({ 'mensagem': erro.message });
