@@ -7,7 +7,7 @@ const autenticacao = async (req, res, next) => {
         const { authorization } = req.headers;
 
         if (!authorization) {
-            return res.status(400).json({ mensagem: 'Não autorizado.' })
+            return res.status(401).json({ mensagem: 'Não autorizado.' })
         }
 
         const token = authorization.split(' ')[1];
@@ -16,7 +16,7 @@ const autenticacao = async (req, res, next) => {
         const usuarioExiste = await knex('usuarios')
             .where({ id: verificado.id, email: verificado.email }).first();
 
-        if (!usuarioExiste) {
+        if (!usuarioExiste) { // colocar msg token inválido ou usuario nao encontrado ?
             return res.status(400).json({ mensagem: 'Usuario nao encontrado.' })
         }
 
@@ -27,7 +27,11 @@ const autenticacao = async (req, res, next) => {
         };
         next();
     } catch (erro) {
+        const errosToken = ['jwt expired', 'invalid signature', 'jwt must be provided'];
         console.log({ 'mensagem': erro.message });
+        if (errosToken.includes(erro.message)) {
+            return res.status(401).json({ mensagem: "Token de autenticação inválido ou expirado." });
+        }
         return res.status(500).json({ "mensagem": "Erro interno do Servidor." });
     }
 }

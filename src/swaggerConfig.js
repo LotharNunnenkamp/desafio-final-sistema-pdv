@@ -1,27 +1,39 @@
 const swaggerJsdoc = require('swagger-jsdoc');
 
-const options = {
+const tags = [
+    {
+        name: 'Login',
+        description: 'Faça o login para poder utilizar todas as funcionalidades.',
+    },
+    {
+        name: 'Categoria',
+        description: 'Operações relacionadas a categorias',
+    },
+    {
+        name: 'Usuarios',
+        description: 'Operações relacionadas a Usuario',
+    }
+];
+
+const securitySchemes = {
+    bearerAuth: {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+    },
+};
+
+const config = {
     definition: {
         openapi: '3.0.0',
         info: {
-            title: 'API Desafio Final Cubos Academy.',
+            title: 'API PDV Frente de Caixa.',
             version: '1.0.0',
-            description: 'Sprint 1',
+            description: 'API Desafio Final Cubos Academy: Sprint 1',
         },
-        // tags: [ // Defina as tags aqui
-        //     {
-        //         name: 'Categoria',
-        //         description: 'Operações relacionadas a categorias',
-        //     },
-        // ],
+        tags,
         components: {
-            securitySchemes: {
-                bearerAuth: {
-                    type: 'http',
-                    scheme: 'bearer',
-                    bearerFormat: 'JWT',
-                },
-            },
+            securitySchemes,
         },
         security: [
             {
@@ -29,10 +41,9 @@ const options = {
             },
         ],
     },
-    //apis: ['./src/controladores/*.js'], // Caminho para os arquivos que contêm as rotas da API
-    apis: ['./src/documentacao/*.js'], // Caminho para os arquivos que contêm as rotas da API
+    apis: ['./src/documentacao/*.js'],
 };
 
-const swaggerSpec = swaggerJsdoc(options);
+const swaggerSpec = swaggerJsdoc(config);
 
 module.exports = swaggerSpec;
