@@ -4,7 +4,8 @@
  *   post:
  *     tags:
  *       - Login
- *     summary: Login de Usuário
+ * 
+ *     summary: Login de Usuário.
  *     description: Realiza a autenticação de um usuário e gera um token de acesso que deve ser inserido no campo Authorize.
  *     requestBody:
  *       required: true

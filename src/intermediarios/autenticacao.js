@@ -27,8 +27,12 @@ const autenticacao = async (req, res, next) => {
         };
         next();
     } catch (erro) {
+        const errosToken = ['jwt expired', 'invalid signature', 'jwt must be provided'];
         console.log({ 'mensagem': erro.message });
-        return res.status(401).json({ mensagem: "Token de autenticação inválido ou expirado." });
+        if (errosToken.includes(erro.message)) {
+            return res.status(401).json({ mensagem: "Token de autenticação inválido ou expirado." });
+        }
+        return res.status(500).json({ "mensagem": "Erro interno do Servidor." });
     }
 }
 
