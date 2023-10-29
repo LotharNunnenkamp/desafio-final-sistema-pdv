@@ -28,7 +28,7 @@ const atualizar = async (req, res) => {
         const { usuarioExiste } = req;
         const { usuarioLogado } = req;
 
-        if (usuarioExiste.id !== usuarioLogado.id) {
+        if (usuarioExiste && usuarioExiste.id !== usuarioLogado.id) {
             return res.status(400).json({ ensagem: "Já existe usuário cadastrado com o e-mail informado." })
         }
 
