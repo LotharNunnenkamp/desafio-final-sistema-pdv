@@ -49,7 +49,7 @@
  *           application/json:
  *             example:
  *               - id: 1
- *                 nome: Categoria 1
+ *                 nome: nome do usuario
  *                 email: email@email.com
  *       401:
  *         description: Não autorizado. É necessário um token JWT válido.
