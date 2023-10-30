@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { listar } = require('../controladores/categiria/listar');
+const { listar } = require('../controladores/categoria/listar');
 
 const rotasCategoria = Router();
 
