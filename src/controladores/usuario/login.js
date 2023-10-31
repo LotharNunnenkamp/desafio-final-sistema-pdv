@@ -4,7 +4,6 @@ const chaveSecreta = require('../../chaveSecreta');
 
 const login = async (req, res) => {
     try {
-        console.log('entrou no login');
         const { email, senha } = req.body;
         const { usuarioExiste } = req;
 

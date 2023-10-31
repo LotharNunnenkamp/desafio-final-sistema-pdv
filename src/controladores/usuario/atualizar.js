@@ -17,7 +17,7 @@ const atualizar = async (req, res) => {
         const atualizar = await knex('usuarios').where({ id: usuarioLogado.id }).update(dadosAtualizacao);
 
         if (!atualizar) {
-            return res.status(400).json({ mensagem: 'Não foi possivel atualiar o usuario.' })
+            return res.status(400).json({ mensagem: 'Não foi possivel atualizar o usuario.' })
         }
 
         return res.status(204).json({ mensagem: 'Usuario atualizado com sucesso.' });
