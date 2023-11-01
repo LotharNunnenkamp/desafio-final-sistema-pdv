@@ -3,9 +3,12 @@ const swaggerJsdoc = require('swagger-jsdoc');
 const servers = [
     {
         url: 'https://elated-rose-moccasins.cyclic.app/',
-
         description: 'Documentacao API PDV',
     },
+    {
+        url: 'https://localhost:3000/',
+        description: 'Documentacao API PDV',
+    }
 ];
 
 const tags = [
