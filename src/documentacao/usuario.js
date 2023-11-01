@@ -50,7 +50,7 @@
  *       - bearerAuth: []
  *     responses:
  *       200:
- *         description: Sucesso. Retorna a lista de categorias.
+ *         description: Sucesso. Retorna detalhadas do usuário.
  *         content:
  *           application/json:
  *             example:
