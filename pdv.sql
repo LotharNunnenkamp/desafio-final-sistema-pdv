@@ -27,15 +27,15 @@ create table usuarios (
    ;
 
 create table produtos (
-    id primary key serial,
-    descricao text,
+    id serial primary key,
+    descricao text not null,
     quantidade_estoque int not null,
     valor int not null,
     categoria_id int references categorias(id)
    );
 
    create table clientes(
-    id primary key serial,
+    id serial primary key,
     nome text,
     email text unique not null,
     cpf text unique not null,
