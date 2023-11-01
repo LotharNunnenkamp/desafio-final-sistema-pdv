@@ -28,6 +28,4 @@ const atualizar = async (req, res) => {
     }
 }
 
-
-
 module.exports = atualizar;
