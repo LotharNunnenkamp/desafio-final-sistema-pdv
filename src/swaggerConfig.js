@@ -6,7 +6,7 @@ const servers = [
         description: 'Deploy da aplicação. Documentacao API PDV',
     },
     {
-        url: 'https://localhost:3000/swagger',
+        url: 'http://localhost:3000/',
         description: 'Documentacao API PDV',
     }
 ];
@@ -42,7 +42,7 @@ const config = {
             version: '1.0.0',
             description: 'API Desafio Final Cubos Academy: Sprint 1',
         },
-        // servers,
+        servers,
         tags,
         components: {
             securitySchemes,
