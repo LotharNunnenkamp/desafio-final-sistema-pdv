@@ -92,12 +92,6 @@
  *     responses:
  *       204:
  *         description: Sucesso. As informações do usuário foram atualizadas.
- *         content:
- *           application/json:
- *             example:
- *               id: 1
- *               nome: nome do usuario
- *               email: email@email.com
  *       400:
  *         description: Parâmetros de entrada inválidos ou e-mail já em uso.
  *       401:

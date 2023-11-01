@@ -12,5 +12,4 @@ app.use(express.json());
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(rotas);
 
-
 module.exports = app;

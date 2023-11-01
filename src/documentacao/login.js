@@ -24,6 +24,12 @@
  *     responses:
  *       200:
  *         description: Login bem-sucedido. Retorna um token de acesso.
+ *         content:
+ *           application/json:
+ *             example:
+ *               id: 1
+ *               nome: nome do usuario
+ *               email: email@email.com
  *       400:
  *         description: Parâmetros de entrada inválidos.
  *       401:
