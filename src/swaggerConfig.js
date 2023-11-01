@@ -2,7 +2,7 @@ const swaggerJsdoc = require('swagger-jsdoc');
 
 const servers = [
     {
-        url: 'http://localhost:3000', // Substitua pela URL da sua API
+        url: 'https://elated-rose-moccasins.cyclic.app/', // Substitua pela URL da sua API
         description: 'Documentacao API PDV',
     },
 ];
