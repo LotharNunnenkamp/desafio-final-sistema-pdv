@@ -1,5 +1,12 @@
 const swaggerJsdoc = require('swagger-jsdoc');
 
+const servers = [
+    {
+        url: 'http://localhost:3000', // Substitua pela URL da sua API
+        description: 'Documentacao API PDV',
+    },
+];
+
 const tags = [
     {
         name: 'Login',
@@ -31,6 +38,7 @@ const config = {
             version: '1.0.0',
             description: 'API Desafio Final Cubos Academy: Sprint 1',
         },
+        servers,
         tags,
         components: {
             securitySchemes,
