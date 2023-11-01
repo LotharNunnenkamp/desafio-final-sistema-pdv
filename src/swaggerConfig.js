@@ -2,7 +2,8 @@ const swaggerJsdoc = require('swagger-jsdoc');
 
 const servers = [
     {
-        url: 'https://elated-rose-moccasins.cyclic.app/', 
+        url: 'https://elated-rose-moccasins.cyclic.app/',
+
         description: 'Documentacao API PDV',
     },
 ];
