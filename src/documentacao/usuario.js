@@ -25,6 +25,12 @@
  *     responses:
  *       201:
  *         description: Usuário cadastrado com sucesso.
+ *         content:
+ *           application/json:
+ *             example:
+ *               id: 1
+ *               nome: nome do usuario
+ *               email: email@email.com 
  *       400:
  *         description: Parâmetros de entrada inválidos ou usuário já existente.
  *       500:
@@ -48,9 +54,9 @@
  *         content:
  *           application/json:
  *             example:
- *               - id: 1
- *                 nome: nome do usuario
- *                 email: email@email.com
+ *               id: 1
+ *               nome: nome do usuario
+ *               email: email@email.com
  *       401:
  *         description: Não autorizado. É necessário um token JWT válido.
  *       500:
@@ -86,6 +92,12 @@
  *     responses:
  *       204:
  *         description: Sucesso. As informações do usuário foram atualizadas.
+ *         content:
+ *           application/json:
+ *             example:
+ *               id: 1
+ *               nome: nome do usuario
+ *               email: email@email.com
  *       400:
  *         description: Parâmetros de entrada inválidos ou e-mail já em uso.
  *       401:
