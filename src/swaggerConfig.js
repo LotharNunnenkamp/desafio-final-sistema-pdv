@@ -3,10 +3,10 @@ const swaggerJsdoc = require('swagger-jsdoc');
 const servers = [
     {
         url: 'https://elated-rose-moccasins.cyclic.app/',
-        description: 'Documentacao API PDV',
+        description: 'Deploy da aplicação. Documentacao API PDV',
     },
     {
-        url: 'https://localhost:3000/',
+        url: 'https://localhost:3000/swagger',
         description: 'Documentacao API PDV',
     }
 ];
@@ -42,7 +42,7 @@ const config = {
             version: '1.0.0',
             description: 'API Desafio Final Cubos Academy: Sprint 1',
         },
-        servers,
+        // servers,
         tags,
         components: {
             securitySchemes,

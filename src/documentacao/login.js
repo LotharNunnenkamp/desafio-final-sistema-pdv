@@ -23,13 +23,16 @@
  *                 description: A senha do usuário.
  *     responses:
  *       200:
- *         description: Login bem-sucedido. Retorna um token de acesso.
+ *         description: Login bem-sucedido. Retorna os dados do usuario logado e o token de acesso.
  *         content:
  *           application/json:
  *             example:
- *               id: 1
- *               nome: nome do usuario
- *               email: email@email.com
+ *               usuario:
+ *                 id: 1
+ *                 nome: nome do usuario
+ *                 email: email@email.com
+ *               token: Bearer token
+ *  
  *       400:
  *         description: Parâmetros de entrada inválidos.
  *       401:
