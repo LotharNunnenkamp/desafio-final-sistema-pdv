@@ -1,4 +1,4 @@
--- create database pdv;
+create database pdv;
 
 create table
     usuarios (

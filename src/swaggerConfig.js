@@ -1,5 +1,16 @@
 const swaggerJsdoc = require('swagger-jsdoc');
 
+const servers = [
+    {
+        url: 'https://elated-rose-moccasins.cyclic.app/',
+        description: 'Deploy da aplicação. Documentacao API PDV',
+    },
+    {
+        url: `http://localhost:${process.env.PORTA}`,
+        description: 'Ambiente de Desenvolvimento - Documentacao API PDV',
+    }
+];
+
 const tags = [
     {
         name: 'Login',
@@ -12,6 +23,14 @@ const tags = [
     {
         name: 'Usuarios',
         description: 'Operações relacionadas a Usuario',
+    },
+    {
+        name: 'Clientes',
+        description: 'Operações relacionadas a Usuario',
+    },
+    {
+        name: 'Produtos',
+        description: 'Operações relacionadas a Usuario',
     }
 ];
 
@@ -23,6 +42,13 @@ const securitySchemes = {
     },
 };
 
+const apis = [
+    './src/documentacao/categoria/*.js',
+    './src/documentacao/cliente/*.js',
+    './src/documentacao/produto/*.js',
+    './src/documentacao/usuario/*.js',
+]
+
 const config = {
     definition: {
         openapi: '3.0.0',
@@ -31,6 +57,7 @@ const config = {
             version: '1.0.0',
             description: 'API Desafio Final Cubos Academy: Sprint 1',
         },
+        servers,
         tags,
         components: {
             securitySchemes,
@@ -41,7 +68,8 @@ const config = {
             },
         ],
     },
-    apis: ['./src/documentacao/*.js'],
+    // apis: ['./src/documentacao/*.js', './src/documentacao/categoria/*.js'],
+    apis,
 };
 
 const swaggerSpec = swaggerJsdoc(config);
