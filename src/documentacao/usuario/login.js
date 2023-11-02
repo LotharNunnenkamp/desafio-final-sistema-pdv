@@ -34,9 +34,23 @@
  *               token: Bearer token
  *  
  *       400:
- *         description: Parâmetros de entrada inválidos.
- *       401:
  *         description: Credenciais de login inválidas.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                   example: Não autorizado. É necessário um token JWT válido.
  *       500:
  *         description: Erro interno do servidor.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                   example: Erro interno do servidor.
  */

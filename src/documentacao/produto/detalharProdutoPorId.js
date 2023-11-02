@@ -43,5 +43,9 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: string
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                   example: Erro interno do servidor.
  */

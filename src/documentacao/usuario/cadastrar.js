@@ -35,4 +35,12 @@
  *         description: Parâmetros de entrada inválidos ou usuário já existente.
  *       500:
  *         description: Erro interno do servidor.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                   example: Erro interno do servidor.
  */
