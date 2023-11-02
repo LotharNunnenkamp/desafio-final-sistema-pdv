@@ -5,13 +5,11 @@ const listar = async (req, res) => {
     try {
         if (categoria_id) {
             const categoriaExiste = await knex('categorias').where({ id: categoria_id }).first();
-
             if (!categoriaExiste) {
-                return res.status(404).json({ mensagem: 'Categoria Não encontrada.' })
+                return res.status(404).json({ mensagem: 'Categoria Não encontrada.' });
             }
 
             const listarProdutosFiltrados = await knex('produtos').where({ categoria_id });
-
             if (listarProdutosFiltrados.length === 0) {
                 return res.status(404).json({ mensagem: 'Nenhum produto encontrado.' });
             }
@@ -20,7 +18,6 @@ const listar = async (req, res) => {
         }
 
         const listarProdutos = await knex('produtos');
-
         if (listarProdutos.length === 0) {
             return res.status(404).json({ mensagem: 'Nenhum produto encontrado.' });
         }
