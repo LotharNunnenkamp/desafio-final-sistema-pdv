@@ -1,12 +1,8 @@
 const knex = require("../../conexoes/bancoDeDados");
 
 const detalharProdutoPorId = async (req, res) => {
-    const { id } = req.params;
     try {
-        const produtoExiste = await knex('produtos').where({ id }).first();
-        if (!produtoExiste) {
-            return res.status(404).json({ mensagem: 'Não foi encontrado produto para o id informado.' });
-        }
+        const produtoExiste = req.produtoExiste;
 
         return res.status(200).json(produtoExiste);
 

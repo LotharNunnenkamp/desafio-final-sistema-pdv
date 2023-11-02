@@ -8,6 +8,7 @@ const excluirProdutoPorId = require('../controladores/produto/excluirProdutoPorI
 const validarCorpoRequisicao = require('../intermediarios/validarCorpoRequisicao');
 const schemaProduto = require('../validacoes/schemaProduto');
 const verificarCategoria = require('../intermediarios/categoriaExiste');
+const verificaProdutoExiste = require('../intermediarios/verificaProdutoExiste');
 
 const rotasProduto = Router();
 rotasProduto.use(autenticacao);
@@ -15,7 +16,7 @@ rotasProduto.use(autenticacao);
 rotasProduto.post('/produto', validarCorpoRequisicao(schemaProduto), verificarCategoria, cadastrarProduto);
 rotasProduto.put('/produto/:id', validarCorpoRequisicao(schemaProduto), verificarCategoria, editarProduto);
 rotasProduto.get('/produto', listar);
-rotasProduto.get('/produto/:id', detalharProdutoPorId);
+rotasProduto.get('/produto/:id', verificaProdutoExiste, detalharProdutoPorId);
 rotasProduto.delete('/produto/:id', excluirProdutoPorId);
 
 module.exports = rotasProduto;
