@@ -2,7 +2,7 @@ const yup = require('yup');
 const { pt } = require('yup-locales');
 yup.setLocale(pt);
 const schemaCliente = yup.object({
-    nome: yup.string().require(),
+    nome: yup.string().required(),
     email: yup.string().email().required(),
     cpf: yup.string()
         .required()
