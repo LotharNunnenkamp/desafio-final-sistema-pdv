@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const autenticacao = require('../intermediarios/autenticacao');
 const cadastrarProduto = require('../controladores/produto/cadastrar');
-const editar = require('../controladores/produto/editar');
+const editarProduto = require('../controladores/produto/editar');
 const listar = require('../controladores/produto/listar');
 const detalharProdutoPorId = require('../controladores/produto/detalharProdutoPorId');
 const excluirProdutoPorId = require('../controladores/produto/excluirProdutoPorId');
@@ -13,7 +13,7 @@ const rotasProduto = Router();
 rotasProduto.use(autenticacao);
 
 rotasProduto.post('/produto', validarCorpoRequisicao(schemaProduto), verificarCategoria, cadastrarProduto);
-rotasProduto.put('/produto/:id', editar);
+rotasProduto.put('/produto/:id', validarCorpoRequisicao(schemaProduto), verificarCategoria, editarProduto);
 rotasProduto.get('/produto', listar);
 rotasProduto.get('/produto/:id', detalharProdutoPorId);
 rotasProduto.delete('/produto/:id', excluirProdutoPorId);
