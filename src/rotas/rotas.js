@@ -8,7 +8,7 @@ const rotasProduto = require('./produto.js');
 
 rotas.use(rotasCategoria);
 rotas.use(rotasUsuario);
-// rotas.use(rotasCliente);
-// rotas.use(rotasProduto);
+rotas.use(rotasCliente);
+rotas.use(rotasProduto);
 
 module.exports = rotas;
