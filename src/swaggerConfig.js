@@ -6,8 +6,8 @@ const servers = [
         description: 'Deploy da aplicação. Documentacao API PDV',
     },
     {
-        url: 'http://localhost:3000/',
-        description: 'Documentacao API PDV',
+        url: `http://localhost:/3000`,
+        description: 'Ambiente de Desenvolvimento - Documentacao API PDV',
     }
 ];
 
@@ -34,6 +34,13 @@ const securitySchemes = {
     },
 };
 
+const apis = [
+    './src/documentacao/categoria/*.js',
+    './src/documentacao/cliente/*.js',
+    './src/documentacao/produto/*.js',
+    './src/documentacao/usuario/*.js',
+]
+
 const config = {
     definition: {
         openapi: '3.0.0',
@@ -53,7 +60,8 @@ const config = {
             },
         ],
     },
-    apis: ['./src/documentacao/*.js'],
+    // apis: ['./src/documentacao/*.js', './src/documentacao/categoria/*.js'],
+    apis,
 };
 
 const swaggerSpec = swaggerJsdoc(config);
