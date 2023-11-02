@@ -12,6 +12,6 @@ rotasCliente.use(autenticacao);
 rotasCliente.post('/cliente', cadastrar);
 rotasCliente.put('/cliente', editar);
 rotasCliente.get('/cliente', listar);
-rotasCliente.post('/cliente/:id', detalhar);
+rotasCliente.get('/cliente/:id', detalhar);
 
 module.exports = rotasCliente;
