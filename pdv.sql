@@ -20,7 +20,7 @@ values ('Informática'), ('Celulares'), ('Beleza e Perfumaria'), ('Mercado'), ('
 
 create table
     produtos (
-        id primary key serial,
+        id serial primary key,
         descricao text,
         quantidade_estoque int not null,
         valor int not null,
@@ -29,7 +29,7 @@ create table
 
 create table
     clientes(
-        id primary key serial,
+        id serial primary key,
         nome text,
         email text unique not null,
         cpf text unique not null,
