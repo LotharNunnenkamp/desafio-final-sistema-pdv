@@ -6,7 +6,7 @@ const servers = [
         description: 'Deploy da aplicação. Documentacao API PDV',
     },
     {
-        url: `http://localhost:/3000`,
+        url: `http://localhost:${process.env.PORTA}`,
         description: 'Ambiente de Desenvolvimento - Documentacao API PDV',
     }
 ];
@@ -22,6 +22,14 @@ const tags = [
     },
     {
         name: 'Usuarios',
+        description: 'Operações relacionadas a Usuario',
+    },
+    {
+        name: 'Clientes',
+        description: 'Operações relacionadas a Usuario',
+    },
+    {
+        name: 'Produtos',
         description: 'Operações relacionadas a Usuario',
     }
 ];
