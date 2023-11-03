@@ -1,6 +1,6 @@
 /**
  * @swagger
- * /produto/{id}:
+ * /produto/:id:
  *   get:
  *     tags:
  *       - Produtos
