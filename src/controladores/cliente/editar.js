@@ -28,12 +28,12 @@ const editarCliente = async (req, res) => {
             nome,
             email,
             cpf,
-            cep: cep || null,
-            rua: rua || null,
-            numero: numero || null,
-            bairro: bairro || null,
-            cidade: cidade || null,
-            estado: estado || null
+            cep: cep || clienteExiste.cep,
+            rua: rua || clienteExiste.rua,
+            numero: numero || clienteExiste.numero,
+            bairro: bairro || clienteExiste.bairro,
+            cidade: cidade || clienteExiste.cidade,
+            estado: estado || clienteExiste.estado
         }
 
         const editar = await knex('clientes').where({ id }).update(clienteAtualizado);
