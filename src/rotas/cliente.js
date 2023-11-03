@@ -13,7 +13,7 @@ const rotasCliente = Router();
 rotasCliente.use(autenticacao);
 
 rotasCliente.post('/cliente', validarCorpoRequisicao(schemaCliente), validarCliente, cadastrarCliente);
-rotasCliente.put('/cliente', validarCorpoRequisicao(schemaCliente), editarCliente);
+rotasCliente.put('/cliente/:id', validarCorpoRequisicao(schemaCliente), editarCliente);
 rotasCliente.get('/cliente', listar);
 rotasCliente.get('/cliente/:id', detalhar);
 

@@ -1,8 +1,8 @@
+const knex = require('../../conexoes/bancoDeDados')
 
 const editarCliente = async (req, res) => {
     const { nome, email, cpf, cep, rua, numero, bairro, cidade, estado } = req.body
     const { id } = req.params
-
     try {
         const clienteExiste = await knex('clientes').where({ id }).first()
 
@@ -12,10 +12,16 @@ const editarCliente = async (req, res) => {
             })
         }
 
-        const emailEncontrado = await knex(clientes).where({ email }).first();
+        const emailEncontrado = await knex('clientes').where({ email }).first();
 
-        if (emailEncontrado.id != clienteExiste.id) {
-            return res.status(400).json({ mensagem: 'Email já cadastrado' })
+        if (emailEncontrado && emailEncontrado.id != clienteExiste.id) {
+            return res.status(400).json({ mensagem: 'Email já cadastrado' });
+        }
+
+        const cpfEncontrado = await knex('clientes').where({ cpf }).first();
+
+        if (cpfEncontrado && cpfEncontrado.id != clienteExiste.id) {
+            return res.status(400).json({ mensagem: 'CPF já cadastrado' });
         }
 
         const clienteAtualizado = {
@@ -30,7 +36,7 @@ const editarCliente = async (req, res) => {
             estado: estado || null
         }
 
-        const editar = await knex('clientes').where({ id }).update(clienteAtualizado)
+        const editar = await knex('clientes').where({ id }).update(clienteAtualizado);
 
         if (!editar) {
             return res.status(400).json({ mensagem: 'Não foi possivel atualizar o cliente.' })

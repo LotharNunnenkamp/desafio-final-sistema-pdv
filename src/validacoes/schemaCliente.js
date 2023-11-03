@@ -7,11 +7,11 @@ const schemaCliente = yup.object({
     cpf: yup.string()
         .required()
         .matches(/^[0-9]+$/, "Apenas números são aceitos")
-        .min(11, 'Deve conter 11 dígitos')
-        .max(11, 'Deve conter 11 dígitos'),
+        .min(11, 'CPF deve conter 11 dígitos')
+        .max(11, 'CPF deve conter 11 dígitos'),
     cep: yup.string().matches(/^[0-9]+$/, "Apenas números são aceitos")
-        .min(8, 'Deve conter 8 dígitos')
-        .max(8, 'Deve conter 8 dígitos'),
+        .min(8, 'CEP deve conter 8 dígitos')
+        .max(8, 'CEP deve conter 8 dígitos'),
     rua: yup.string(),
     numero: yup.string(),
     bairro: yup.string(),
