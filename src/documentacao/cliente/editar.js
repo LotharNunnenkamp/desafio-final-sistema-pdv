@@ -1,6 +1,6 @@
 /**
  * @swagger
- * /cliente/:id:
+ * /cliente/{id}:
  *   put:
  *     tags:
  *       - Clientes
