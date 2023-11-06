@@ -16,25 +16,25 @@
  *           application/json:
  *             example:
  *               - id: 1
- *                 nome: nome
- *                 email: email@email.com
+ *                 nome: joao
+ *                 email: joao@email.com
  *                 cpf: 11111111111
- *                 cep: 
- *                 rua:
- *                 numero:
- *                 bairro:
- *                 cidade:
- *                 estado:
+ *                 cep: 11111111 
+ *                 rua: xxxxx 
+ *                 numero: 11111 
+ *                 bairro: sapiranga
+ *                 cidade: xxxxx
+ *                 estado: xxxxx
  *               - id: 2
- *                 nome: nome
- *                 email: email@email.com
- *                 cpf: 11111111111
- *                 cep: 
- *                 rua:
- *                 numero:
- *                 bairro:
- *                 cidade:
- *                 estado:
+ *                 nome: xxxxx
+ *                 email: xxxxx@xxxxx.com
+ *                 cpf: 22222222222
+ *                 cep: 22222222 
+ *                 rua: xxxxx 
+ *                 numero: 22222 
+ *                 bairro: xxxxx
+ *                 cidade: xxxxx
+ *                 estado: xxxxx
  *       401:
  *         description: Credenciais de login inválidas.
  *         content:
