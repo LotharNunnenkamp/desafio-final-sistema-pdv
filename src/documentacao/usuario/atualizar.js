@@ -30,10 +30,34 @@
  *     responses:
  *       204:
  *         description: Sucesso. As informações do usuário foram atualizadas.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                   example: Usuário atualizado.
  *       400:
  *         description: Parâmetros de entrada inválidos ou e-mail já em uso.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                   example: Já existe usuário cadastrado com o e-mail informado.
  *       401:
  *         description: Não autorizado. É necessário um token JWT válido.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                   example: Não autorizado. É necessário um token JWT válido.
  *       500:
  *         description: Erro interno do servidor.
  *         content:

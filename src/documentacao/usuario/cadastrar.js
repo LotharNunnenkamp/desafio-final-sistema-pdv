@@ -36,6 +36,14 @@
  *               email: email@email.com 
  *       400:
  *         description: Parâmetros de entrada inválidos ou usuário já existente.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                   example: Já existe usuário cadastrado com o e-mail informado.
  *       500:
  *         description: Erro interno do servidor.
  *         content:
