@@ -15,12 +15,15 @@
  *             properties:
  *               nome:
  *                 type: string
+ *                 example: grupo20
  *                 description: O nome do usuário.
  *               email:
  *                 type: string
+ *                 example: grupo20@email.com
  *                 description: O email do usuário.
  *               senha:
  *                 type: string
+ *                 example: 12345
  *                 description: A senha do usuário.
  *     responses:
  *       201:
