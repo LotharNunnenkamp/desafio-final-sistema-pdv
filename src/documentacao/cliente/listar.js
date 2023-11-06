@@ -1,6 +1,6 @@
 /**
  * @swagger
- * /listar:
+ * /cliente:
  *   get:
  *     tags:
  *       - Clientes
@@ -16,9 +16,25 @@
  *           application/json:
  *             example:
  *               - id: 1
- *                 nome: Categoria 1
+ *                 nome: nome
+ *                 email: email@email.com
+ *                 cpf: 11111111111
+ *                 cep: 
+ *                 rua:
+ *                 numero:
+ *                 bairro:
+ *                 cidade:
+ *                 estado:
  *               - id: 2
- *                 nome: Categoria 2
+ *                 nome: nome
+ *                 email: email@email.com
+ *                 cpf: 11111111111
+ *                 cep: 
+ *                 rua:
+ *                 numero:
+ *                 bairro:
+ *                 cidade:
+ *                 estado:
  *       401:
  *         description: Credenciais de login inválidas.
  *         content:
