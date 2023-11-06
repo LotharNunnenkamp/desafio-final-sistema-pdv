@@ -15,7 +15,7 @@
  *         description: ID do produto a ser detalhado.
  *     responses:
  *       200:
- *         description: Sucesso. Retorna os detalhes do produto.
+ *         description: Sucesso. Retorna os detalhes do produtoSSSSSSS.
  *         content:
  *           application/json:
  *             schema:

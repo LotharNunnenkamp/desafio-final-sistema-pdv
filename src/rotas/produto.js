@@ -17,6 +17,6 @@ rotasProduto.post('/produto', validarCorpoRequisicao(schemaProduto), verificarCa
 rotasProduto.put('/produto/:id', validarCorpoRequisicao(schemaProduto), verificarCategoria, editarProduto);
 rotasProduto.get('/produto', listar);
 rotasProduto.get('/produto/:id', verificaProdutoExiste, detalharProdutoPorId);
-rotasProduto.delete('/produto/:id', excluirProdutoPorId);
+rotasProduto.delete('/produto/:id', verificaProdutoExiste, excluirProdutoPorId);
 
 module.exports = rotasProduto;
