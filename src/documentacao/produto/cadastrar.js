@@ -1,6 +1,6 @@
 /**
  * @swagger
- * /usuario:
+ * /produto:
  *   post:
  *     tags:
  *       - Produtos
