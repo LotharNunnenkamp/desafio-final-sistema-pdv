@@ -6,7 +6,7 @@ const verificaProdutoExiste = async (req, res, next) => {
         const produtoExiste = await knex('produtos').where({ id }).first();
         if (!produtoExiste) {
             return res.status(404).json({
-                mensagem: "O produto informado não existe."
+                mensagem: "O produto informado não foi encontrado."
             });
         }
 

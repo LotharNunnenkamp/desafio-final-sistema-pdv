@@ -38,6 +38,7 @@
  *               properties:
  *                 mensagem:
  *                   type: string
+ *                   example: O produto informado não foi encontrado.
  *       500:
  *         description: Erro interno do servidor.
  *         content:
