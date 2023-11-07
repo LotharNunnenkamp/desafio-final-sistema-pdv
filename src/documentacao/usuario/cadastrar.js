@@ -15,12 +15,15 @@
  *             properties:
  *               nome:
  *                 type: string
+ *                 example: grupo20
  *                 description: O nome do usuário.
  *               email:
  *                 type: string
+ *                 example: grupo20@email.com
  *                 description: O email do usuário.
  *               senha:
  *                 type: string
+ *                 example: 12345
  *                 description: A senha do usuário.
  *     responses:
  *       201:
@@ -33,6 +36,14 @@
  *               email: email@email.com 
  *       400:
  *         description: Parâmetros de entrada inválidos ou usuário já existente.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                   example: Já existe usuário cadastrado com o e-mail informado.
  *       500:
  *         description: Erro interno do servidor.
  *         content:

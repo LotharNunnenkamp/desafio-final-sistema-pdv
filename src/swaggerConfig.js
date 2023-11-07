@@ -26,11 +26,11 @@ const tags = [
     },
     {
         name: 'Clientes',
-        description: 'Operações relacionadas a Usuario',
+        description: 'Operações relacionadas a Clientes',
     },
     {
         name: 'Produtos',
-        description: 'Operações relacionadas a Usuario',
+        description: 'Operações relacionadas a Produtos',
     }
 ];
 
