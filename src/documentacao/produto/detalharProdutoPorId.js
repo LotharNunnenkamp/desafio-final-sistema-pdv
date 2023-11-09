@@ -23,12 +23,19 @@
  *               properties:
  *                 id:
  *                   type: integer
- *                 nome:
- *                   type: string
+ *                   example: 1
  *                 descricao:
  *                   type: string
- *                 preco:
+ *                   example: Brinquedo
+ *                 quantidade_estoque:
  *                   type: number
+ *                   example: 10
+ *                 valor:
+ *                   type: number
+ *                   example: 100
+ *                 categoria_id:
+ *                   type: number
+ *                   example: 6
  *       404:
  *         description: Produto não encontrado.
  *         content:
