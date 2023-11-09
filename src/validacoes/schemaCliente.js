@@ -6,10 +6,10 @@ const schemaCliente = yup.object({
     email: yup.string().email().required(),
     cpf: yup.string()
         .required()
-        .matches(/^[0-9]+$/, "Apenas números são aceitos")
+        .matches(/^[0-9]+$/, "Apenas números são aceitos no campo CPF")
         .min(11, 'CPF deve conter 11 dígitos')
         .max(11, 'CPF deve conter 11 dígitos'),
-    cep: yup.string().matches(/^[0-9]+$/, "Apenas números são aceitos")
+    cep: yup.string().matches(/^[0-9]+$/, "Apenas números são aceitos no campo CEP")
         .min(8, 'CEP deve conter 8 dígitos')
         .max(8, 'CEP deve conter 8 dígitos'),
     rua: yup.string(),
