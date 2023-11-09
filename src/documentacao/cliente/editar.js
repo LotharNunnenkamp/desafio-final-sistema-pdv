@@ -6,6 +6,12 @@
  *       - Clientes
  *     summary: Atualizar informações do cliente
  *     description: Atualiza informações do cliente de id informado no parâmentro da rota.
+ *      parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
  *     security:
  *       - bearerAuth: []
  *     requestBody:
