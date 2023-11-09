@@ -15,31 +15,40 @@
  *             properties:
  *               nome:
  *                 type: string
+ *                 example: joão 
  *                 description: O nome do cliente.
  *               email:
  *                 type: string
- *                 description: O email do cliente.
+ *                 example: joao@email.com 
+ *                 description: O email do ciente.
  *               cpf:
  *                 type: string
+ *                 example: 11223344551 
  *                 description: O cpf do cliente.
  *               cep:
  *                 type: string
+ *                 example: 11111111 
  *                 description: O cep do endereço do cliente.
  *               rua:
  *                 type: string
+ *                 example: rua x 
  *                 description: A rua do endereço cliente.
  *               numero:
  *                 type: string
+ *                 example: 123 
  *                 description: O numero do endereço do cliente.
  *               bairro:
  *                 type: string
- *                 description: o bairro do endereço do cliente.
+ *                 example: bairro z 
+ *                 description: O bairro do endereço do cliente.
  *               cidade:
  *                 type: string
- *                 description: a cidade do endereço do cliente.
+ *                 example: y 
+ *                 description: A cidade do endereço do cliente.
  *               estado:
  *                 type: string
- *                 description: o estado do endereço do cliente.  
+ *                 example: AD 
+ *                 description: O estado do endereço do cliente.  
  *     responses:
  *       201:
  *         description: Cliente cadastrado com sucesso.
@@ -49,9 +58,25 @@
  *               id: 1
  *               nome: nome do usuario
  *               email: email@email.com
- *               cpf: xxxxxxxxxxx    
+ *               cpf: 11111111111    
  *       400:
  *         description: Parâmetros de entrada inválidos ou usuário já existente.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                   example: Parâmentros de entrada inválidos ou usuário já existe.          
  *       500:
  *         description: Erro interno do servidor.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                   example: Erro interno do servidor.  
  */
