@@ -26,7 +26,7 @@ const cadastrarProduto = async (req, res) => {
                 produto_imagem: imagem.url
             }).where({ id }).returning('*')
 
-            return res.status(201).json(produto);
+            return res.status(201).json(produto[0]);
         }
 
         return res.status(201).json(cadastroDeProduto[0])

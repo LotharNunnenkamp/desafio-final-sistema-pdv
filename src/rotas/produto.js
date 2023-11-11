@@ -10,7 +10,6 @@ const schemaProduto = require('../validacoes/schemaProduto');
 const verificarCategoria = require('../intermediarios/categoriaExiste');
 const verificaProdutoExiste = require('../intermediarios/verificaProdutoExiste');
 const multer = require('../validacoes/multer');
-const armazenaImagem = require('../intermediarios/armazenaImagem');
 
 const rotasProduto = Router();
 rotasProduto.use(autenticacao);
