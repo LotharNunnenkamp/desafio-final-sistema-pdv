@@ -1,4 +1,4 @@
-const knex = require("knex");
+const knex = require("../../conexoes/bancoDeDados");
 
 const cadastrar = async (req, res) => {
 
@@ -9,9 +9,9 @@ const cadastrar = async (req, res) => {
         let erros = [];
         // Verificar se os produtos existem e descobrir o valor total do pedido
         for (const produto of pedido_produtos) {
-            let produtoEncontrado = await knex('produtos').select('id').where('id', produto.produto_id).first();
+            let produtoEncontrado = await knex('produtos').where('id', produto.produto_id).first();
             if (!produtoEncontrado) {
-                erros.push({ message: `Produto com ID ${produto.produto_id} não encontrado` });
+                erros.push({ messagem: `Produto com ID ${produto.produto_id} não encontrado` });
                 continue
             }
 
@@ -25,12 +25,12 @@ const cadastrar = async (req, res) => {
             valorTotal += produtoEncontrado.valor * produto.quantidade_produto;
 
             produto.valor_produto = produtoEncontrado.valor;
-            produto.quantidade_estoque = produtoEncontrado;
+            produto.quantidade_estoque = produtoEncontrado.quantidade_estoque;
         }
 
         if (erros.length > 0) {
             console.log({ erros })
-            return res.status(400).json({ erros })
+            return res.status(400).json(erros)
         }
 
         // Inserir o pedido
@@ -44,7 +44,7 @@ const cadastrar = async (req, res) => {
                 pedido_id: pedidoId,
                 produto_id: produto.produto_id,
                 quantidade_produto: produto.quantidade_produto,
-                valor_produto: produto.valo_produto
+                valor_produto: produto.valor_produto
             }
 
             await knex('pedido_produtos').insert(ProdutoPedidoObj)
@@ -58,7 +58,7 @@ const cadastrar = async (req, res) => {
 
         return res.status(201).json({ message: 'Pedido cadastrado com sucesso' });
     } catch (error) {
-        console.log(erro.message);
+        console.log(error.message);
         return res.status(500).json({ message: 'Erro Interno do Servidor' });
     }
 
