@@ -16,11 +16,14 @@ const cadastrarProduto = async (req, res) => {
             const id = cadastroDeProduto[0].id;
             const { file } = req;
 
-            const imagem = await uploadImagem(
-                `produtos/${id}/${file.originalname}`,
-                buffer = file.buffer,
-                mimetype = file.mimetype
-            )
+            const path = `produtos/${id}/${cadastroDeProduto[0].descricao}`;
+
+            const imagem = await uploadImagem(path, file.buffer, file.mimetype)
+
+            if (!imagem) {
+                imagem = null
+                console.log('Nao foi possivel fazer o upload.');
+            }
 
             produto = await knex('produtos').update({
                 produto_imagem: imagem.url
