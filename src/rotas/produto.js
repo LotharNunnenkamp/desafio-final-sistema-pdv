@@ -10,6 +10,7 @@ const schemaProduto = require('../validacoes/schemaProduto');
 const verificarCategoria = require('../intermediarios/categoriaExiste');
 const verificaProdutoExiste = require('../intermediarios/verificaProdutoExiste');
 const multer = require('../validacoes/multer');
+const verificaProdutoEmPedidos = require('../intermediarios/verificaProdutoEmPedidos');
 
 const rotasProduto = Router();
 rotasProduto.use(autenticacao);
@@ -18,6 +19,6 @@ rotasProduto.post('/produto', multer.single('produto_imagem'), validarCorpoRequi
 rotasProduto.put('/produto/:id', multer.single('produto_imagem'), validarCorpoRequisicao(schemaProduto), verificarCategoria, editarProduto);
 rotasProduto.get('/produto', listar);
 rotasProduto.get('/produto/:id', verificaProdutoExiste, detalharProdutoPorId);
-rotasProduto.delete('/produto/:id', verificaProdutoExiste, excluirProdutoPorId);
+rotasProduto.delete('/produto/:id', verificaProdutoExiste, verificaProdutoEmPedidos, excluirProdutoPorId);
 
 module.exports = rotasProduto;

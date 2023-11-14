@@ -12,7 +12,7 @@
  *         required: true
  *         schema:
  *           type: integer
- *         description: ID do produto a ser exluido.
+ *         description: ID do produto a ser excluído.
  *     responses:
  *       200:
  *         description: Sucesso. Retorna o produto excluído.
@@ -29,6 +29,16 @@
  *                   type: string
  *                 preco:
  *                   type: number
+ *       400:
+ *         description: Produto não pode ser excluído. Há pedido(s) com o produto.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 mensagem:
+ *                   type: string
+ *                   example: Produto não pode ser excluído. Há pedido(s) com o produto.
  *       404:
  *         description: Produto não encontrado.
  *         content:
