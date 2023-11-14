@@ -31,6 +31,10 @@ const tags = [
     {
         name: 'Produtos',
         description: 'Operações relacionadas a Produtos',
+    },
+    {
+        name: 'Pedidos',
+        description: 'Operações relacionadas a Pedidos',
     }
 ];
 
@@ -47,6 +51,7 @@ const apis = [
     './src/documentacao/cliente/*.js',
     './src/documentacao/produto/*.js',
     './src/documentacao/usuario/*.js',
+    './src/documentacao/pedido/*.js',
 ]
 
 const config = {
