@@ -1,6 +1,6 @@
 /**
  * @swagger
- * /produto:
+ * /pedido:
  *   post:
  *     tags:
  *       - Pedidos
@@ -34,7 +34,7 @@
  *                       description: O id do produto dentro do pedido.
  *                     quantidade_produto:
  *                       type: integer
- *                       exemple: 10
+ *                       example: 10
  *                       description: A quantidade de produtor adquiridos no pedido.                                               
  *     responses:
  *       201:
