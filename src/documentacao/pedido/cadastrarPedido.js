@@ -26,7 +26,7 @@
  *               pedido_produto:
  *                 type: array
  *                 items: 
- *                   type: object.
+ *                   type: object
  *                   properties:
  *                     produto_id: 
  *                       type: integer
