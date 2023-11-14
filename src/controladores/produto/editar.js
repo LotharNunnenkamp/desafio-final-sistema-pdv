@@ -19,11 +19,9 @@ const editarProduto = async (req, res) => {
             const id = produtoExiste.id;
             const { file } = req;
 
-            const imagem = await uploadImagem(
-                `produtos/${id}/${file.originalname}`,
-                buffer = file.buffer,
-                mimetype = file.mimetype
-            );
+            const path = `produtos/${id}/${produtoExiste.descricao}`;
+
+            const imagem = await uploadImagem(path, file.buffer, file.mimetype)
 
             produto_imagem = imagem.url;
             // produto = await knex('produtos').update({
