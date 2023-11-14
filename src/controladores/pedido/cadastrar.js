@@ -1,4 +1,6 @@
 const knex = require("../../conexoes/bancoDeDados");
+const transporter = require("../../conexoes/servidorEmail");
+require('dotenv').config();
 
 const cadastrar = async (req, res) => {
 
@@ -55,6 +57,16 @@ const cadastrar = async (req, res) => {
                 .update({ quantidade_estoque: descontarEstoque })
         }
 
+        const email = await knex('clientes').select('email').where('id', cliente_id).first()
+        console.log(email);
+
+        transporter.sendMail({
+            from: process.env.MAIL_FROM,
+            to: `${email.email}`,
+            subject: `pedido de nº ${pedidoId} cadastrado com sucesso`,
+            text: `seu pedido de nº ${pedidoId} foi cadastrado com sucesso. 
+            Obrigado pela preferência`
+        });
 
         return res.status(201).json({ message: 'Pedido cadastrado com sucesso' });
     } catch (error) {
