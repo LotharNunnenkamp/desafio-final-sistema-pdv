@@ -23,7 +23,7 @@
  *                 type: string
  *                 example: Entregar entre 10am e 14pm 
  *                 description: Observações acerca do pedido.
- *               pedido_produto:
+ *               pedido_produtos:
  *                 type: array
  *                 items: 
  *                   type: object
