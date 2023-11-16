@@ -16,7 +16,7 @@ const rotasProduto = Router();
 rotasProduto.use(autenticacao);
 
 rotasProduto.post('/produto', multer.single('produto_imagem'), validarCorpoRequisicao(schemaProduto), verificarCategoria, cadastrarProduto);
-rotasProduto.put('/produto/:id', multer.single('produto_imagem'), validarCorpoRequisicao(schemaProduto), verificarCategoria, editarProduto);
+rotasProduto.put('/produto/:id', multer.single('produto_imagem'), verificaProdutoExiste, validarCorpoRequisicao(schemaProduto), verificarCategoria, editarProduto);
 rotasProduto.get('/produto', listar);
 rotasProduto.get('/produto/:id', verificaProdutoExiste, detalharProdutoPorId);
 rotasProduto.delete('/produto/:id', verificaProdutoExiste, verificaProdutoEmPedidos, excluirProdutoPorId);

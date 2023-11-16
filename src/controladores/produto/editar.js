@@ -8,11 +8,6 @@ const editarProduto = async (req, res) => {
     try {
         const produtoExiste = await knex('produtos').where({ id }).first();
 
-        if (!produtoExiste) {
-            return res.status(404).json({
-                mensagem: "O produto informado não existe."
-            });
-        }
         let produto_imagem = null;
 
         if (req.file) {
@@ -37,7 +32,7 @@ const editarProduto = async (req, res) => {
             quantidade_estoque,
             valor,
             categoria_id,
-            produto_imagem
+            produto_imagem: req.file ? produto_imagem : produtoExiste.produto_imagem
         });
 
         if (!editar) {
