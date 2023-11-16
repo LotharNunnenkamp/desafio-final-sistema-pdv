@@ -18,23 +18,27 @@ const cadastrarProduto = async (req, res) => {
 
             const path = `produtos/${id}/${cadastroDeProduto[0].descricao}`;
 
-            const imagem = await uploadImagem(path, file.buffer, file.mimetype)
-
-            if (!imagem) {
-                imagem = null
-                console.log('Nao foi possivel fazer o upload.');
+            let imagem;
+            try {
+                imagem = await uploadImagem(path, file.buffer, file.mimetype);
+            } catch (error) {
+                console.log({ 'mensagem': 'Nao foi possivel carregar a imagem no armazenamento externo.' });
             }
 
-            produto = await knex('produtos').update({
-                produto_imagem: imagem.url
-            }).where({ id }).returning('*')
+            let produto = cadastroDeProduto;
+            if (imagem) {
+                produto = await knex('produtos').update({
+                    produto_imagem: imagem.url
+                }).where({ id }).returning('*');
+
+            }
 
             return res.status(201).json(produto[0]);
         }
 
         return res.status(201).json(cadastroDeProduto[0])
-    } catch (error) {
-        console.log({ 'mensagem': error.message });
+    } catch (erro) {
+        console.log({ 'mensagem': erro.message });
         return res.status(500).json({ "mensagem": "Erro interno do Servidor." });
     }
 
