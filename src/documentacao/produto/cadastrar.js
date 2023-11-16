@@ -11,36 +11,50 @@
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             type: object
  *             properties:
  *               descricao:
  *                 type: string
- *                 example: Notebook XPTO
  *                 description: Descrição do produto.
  *               quantidade_estoque:
  *                 type: integer
- *                 example: 3
  *                 description: Quantidade em estoque do produto.
  *               valor:
- *                 type: float
- *                 example: 359999
+ *                 type: number
  *                 description: Valor do produto.
  *               categoria_id:
  *                 type: integer
- *                 example: 1
  *                 description: ID da categoria do produto.
+ *               produto_imagem:
+ *                 type: string
+ *                 format: binary
+ *                 description: Imagem do produto (opcional).
  *     responses:
  *       201:
  *         description: Produto cadastrado com sucesso.
  *         content:
  *           application/json:
- *             example:
- *               descricao: nome do produto
- *               quantidade_estoque: 2
- *               valor: 1500
- *               categoria_id: 3 
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 descricao:
+ *                   type: string
+ *                   example: nome do produto
+ *                 quantidade_estoque:
+ *                   type: integer
+ *                   example: 2
+ *                 valor:
+ *                   type: number
+ *                   example: 1500
+ *                 categoria_id:
+ *                   type: integer
+ *                   example: 3 
+ *                 produto_imagem:
+ *                   type: string
+ *                   format: binary
+ *                   description: Imagem do produto (opcional).
  *       404:
  *         description: Categoria informada não existe.
  *         content:
@@ -60,7 +74,7 @@
  *               properties:
  *                 mensagem:
  *                   type: string
- *                   example: Usuario não autorizado. 
+ *                   example: Usuário não autorizado. 
  *       500:
  *         description: Erro interno do servidor.
  *         content:
