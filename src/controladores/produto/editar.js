@@ -21,12 +21,14 @@ const editarProduto = async (req, res) => {
 
             const path = `produtos/${id}/${produtoExiste.descricao}`;
 
-            const imagem = await uploadImagem(path, file.buffer, file.mimetype)
+            let imagem;
+            try {
+                imagem = await uploadImagem(path, file.buffer, file.mimetype)
+            } catch (error) {
+                console.log('Não foi possivel carregar a imagem no servidor de armazenamento externo.');
+            }
 
-            produto_imagem = imagem.url;
-            // produto = await knex('produtos').update({
-            //     produto_imagem: imagem.url
-            // }).where({ id }).returning('*')
+            produto_imagem = imagem ? imagem.url : null;
 
         }
 

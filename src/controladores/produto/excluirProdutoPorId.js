@@ -9,7 +9,11 @@ const excluirProdutoPorId = async (req, res) => {
 
         if (produtoExiste && produtoExiste.produto_imagem !== null) {
             const imagemASerExcluida = produtoExiste.produto_imagem.slice(urlBase.length);
-            await excluirImagem(imagemASerExcluida);
+            try {
+                await excluirImagem(imagemASerExcluida);
+            } catch (error) {
+                console.log('Não foi possivel excluir a imagem do produto no armazenamento externo.');
+            }
         }
 
         const produtoExcluido = await knex('produtos').where('id', id).del().returning('*');
