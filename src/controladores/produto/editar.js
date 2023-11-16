@@ -25,7 +25,7 @@ const editarProduto = async (req, res) => {
             try {
                 imagem = await uploadImagem(path, file.buffer, file.mimetype)
             } catch (error) {
-                console.log('Não foi possivel carregar a imagem no servidor de armazenamento externo.');
+                console.log({ 'mensagem': 'Nao foi possivel carregar a imagem no armazenamento externo.' });
             }
 
             produto_imagem = imagem ? imagem.url : null;

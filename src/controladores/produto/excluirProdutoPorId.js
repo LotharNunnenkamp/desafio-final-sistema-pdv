@@ -12,7 +12,7 @@ const excluirProdutoPorId = async (req, res) => {
             try {
                 await excluirImagem(imagemASerExcluida);
             } catch (error) {
-                console.log('Não foi possivel excluir a imagem do produto no armazenamento externo.');
+                console.log({ 'mensagem': 'Nao foi possivel carregar a imagem no armazenamento externo.' });
             }
         }
 
