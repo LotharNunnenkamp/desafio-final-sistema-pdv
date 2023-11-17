@@ -9,7 +9,7 @@ const cadastrar = async (req, res) => {
     try {
         let valorTotal = 0;
         let erros = [];
-        // Verificar se os produtos existem e descobrir o valor total do pedido
+
         for (const produto of pedido_produtos) {
             let produtoEncontrado = await knex('produtos').where('id', produto.produto_id).first();
             if (!produtoEncontrado) {
@@ -35,12 +35,11 @@ const cadastrar = async (req, res) => {
             return res.status(400).json(erros)
         }
 
-        // Inserir o pedido
         const cadastrarPedido = await knex('pedidos').insert({ cliente_id, observacao, valor_total: valorTotal }).returning('*');
         const pedidoId = cadastrarPedido[0].id
-        // Associar os produtos ao pedido
+
         for (const produto of pedido_produtos) {
-            // const valorProduto = knex('produtos').select('valor').where('id', produto.produto_id)
+
 
             const ProdutoPedidoObj = {
                 pedido_id: pedidoId,
