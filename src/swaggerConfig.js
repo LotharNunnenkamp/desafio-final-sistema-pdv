@@ -59,8 +59,8 @@ const config = {
         openapi: '3.0.0',
         info: {
             title: 'API PDV Frente de Caixa.',
-            version: '1.2.0',
-            description: 'API Desafio Final Cubos Academy: Sprint 2',
+            version: '1.3.0',
+            description: 'API Desafio Final Cubos Academy',
         },
         servers,
         tags,
