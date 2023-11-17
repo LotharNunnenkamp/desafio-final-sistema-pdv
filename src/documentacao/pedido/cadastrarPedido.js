@@ -19,7 +19,7 @@
  *                 type: number
  *                 example: 1
  *                 description: Id do cliente.
- *               observação:
+ *               observacao:
  *                 type: string
  *                 example: Entregar entre 10am e 14pm 
  *                 description: Observações acerca do pedido.
